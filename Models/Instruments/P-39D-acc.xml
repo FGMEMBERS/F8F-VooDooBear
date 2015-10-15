@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>P-39D-acc.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>Needle1</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.4</red>
+    <green>0.20</green>
+    <blue>0.20</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>
+  <property>/accelerations/pilot/z-accel-fps_sec[0]</property>
+  <interpolation>
+   <entry>
+    <ind>-386</ind>
+    <dep>330</dep>
+   </entry>
+   <entry>
+    <ind>161</ind>
+    <dep>0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

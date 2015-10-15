@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+
+<!-- F8F_VooDooBear-->
+
+<PropertyList>
+
+ <path>F8F_VooDooBear.ac</path>
+ <sound><path>Aircraft/F8F_VooDooBear/Sounds/mp-sound.xml</path></sound>
+<nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/F8F_VooDooBear/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+ <offsets>
+   <z-m>0.0</z-m>
+ </offsets>
+<!--
+    <effect>
+  <inherits-from>Aircraft/F8F_VooDooBear/Models/Effects/F8F_Bearcat_bumpspec</inherits-from>
+  <object-name>fuselage</object-name>
+    </effect>
+-->
+	
+
+	<model>
+		<name>cockpit</name>
+		<path>Aircraft/F8F_VooDooBear/Models/cockpit.xml</path>
+	</model>
+	<animation>
+  <object-name>cockpit</object-name>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
+
+	
+	<!-- Transparent Surfaces for Rembrandt rendering -->
+ 	
+	<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+      <object-name>CanopyGlass</object-name>
+	   <object-name>WindscreenGlass</object-name>
+	    <object-name>lamp</object-name>
+		<object-name>light_tran</object-name>
+		<object-name>gusightglass</object-name>
+		<object-name>nav_lights</object-name>
+		<object-name>nav_light1</object-name>
+		
+		
+  </animation>
+  
+  
+  <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>glass</object-name>
+       <object-name>CanopyGlass</object-name>
+	    <object-name>lamp</object-name>
+		<object-name>light_tran</object-name>
+		<object-name>WindscreenGlass</object-name>
+		 <object-name>fastpdisk</object-name>
+		<object-name>slowpdisk</object-name>
+		<object-name>nav_lights</object-name>
+		<object-name>nav_light1</object-name>
+   </effect>
+   
+   
+   
+	 <!-- Turns off non rembrant lighting and effects -->
+<animation>
+        <type>select</type>
+       
+	<object-name>gusightglass</object-name>
+	
+		<condition>
+            <not>
+            <property>/sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+    </animation>
+ 
+	
+	
+<!--Propeller -->
+ <animation>
+  <type>select</type>
+  <object-name>Prop</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>1000</value>
+   </less-than>
+  </condition>
+ </animation>
+<animation>
+  <type>spin</type>
+  <object-name>Prop</object-name>
+    <property>engines/engine[0]/rpm</property>
+    <factor>-0.5</factor>
+  <center>
+   <x-m>3.40</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+<animation>
+  <type>spin</type>
+  <object-name>PropHub</object-name>
+    <property>engines/engine[0]/rpm</property>
+    <factor>-0.5</factor>
+  <center>
+   <x-m>3.40</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+  <model>
+    <name>pdisk</name>
+		<nopreview/>
+    <path>Aircraft/F8F_VooDooBear/Models/pdisk.xml</path>
+    <offsets>
+   <x-m>0.14</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+    </offsets>
+  </model>	
+
+<!--left Maingear -->
+ <animation>
+  <type>rotate</type>
+  <object-name>PortStrut</object-name>
+  <object-name>PortOuterDoor</object-name>
+  <object-name>PortWheel</object-name>
+   <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>84.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>2.067</x-m>
+   <y-m>-2.205</y-m>
+   <z-m>-0.271</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.2</y>
+   <z>0.2</z>
+  </axis>
+ </animation>
+ 
+
+<!-- right Maingear -->
+ <animation>
+  <type>rotate</type>
+  <object-name>StarboardStrut</object-name>
+  <object-name>StarboardOuterDoor</object-name>
+  <object-name>StarboardWheel</object-name>
+   <property>gear/gear[1]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>84.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>2.067</x-m>
+   <y-m>2.205</y-m>
+   <z-m>-0.271</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.2</y>
+   <z>-0.2</z>
+  </axis>
+ </animation>
+ 
+<!--Tailwheel-->
+ <animation>
+  <type>translate</type>
+  <object-name>tailwheel</object-name>
+  <object-name>tailgear1</object-name>
+  <object-name>tailgear2</object-name>
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.35</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>0.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-0.2</x>
+   <y>0.0</y>
+   <z>1.0</z>
+  </axis>
+ </animation>
+<animation> 
+      <type>rotate</type>
+      <object-name>tailwheel</object-name>
+  		<object-name>tailgear2</object-name>
+      <property>gear/gear[2]/caster-angle-deg</property>
+      <factor>1</factor>
+      <center> 
+        <x-m>7.96</x-m>
+        <y-m>0</y-m>
+        <z-m>-0.502272</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+      </axis>
+    </animation>
+
+<!--Flaps-->
+ <animation>
+  <type>rotate</type>
+  <object-name>PortFlap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>9.0</factor>
+
+  <center>
+   <x-m>3.650000</x-m>
+   <y-m>-1.1000</y-m>
+   <z-m>-0.34000</z-m>
+  </center>
+
+  <axis>
+   <x>0.125779</x>
+   <y>0.987738</y>
+   <z>-0.092485</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>StarboardFlap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>9.0</factor>
+
+   <center>
+    <x-m>3.650000</x-m>
+    <y-m>1.1000</y-m>
+    <z-m>-0.34000</z-m>
+  </center>
+
+  <axis>
+   <x>-0.125779</x>
+   <y>0.987738</y>
+   <z>0.092485</z>
+  </axis>
+ </animation>
+
+
+
+<!--Control Surfaces-->
+ <animation>
+  <type>rotate</type>
+  <object-name>PortAileron</object-name>
+   <property>controls/flight/aileron</property>
+  <factor>15.0</factor>
+
+  <center>
+   <x-m>3.27000</x-m>
+   <y-m>-3.9000</y-m>
+   <z-m>-0.100000</z-m>
+  </center>
+
+  <axis>
+   <x>0.124264</x>
+   <y>0.989513</y>
+   <z>-0.063638</z>
+  </axis>
+
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>StarboardAileron</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-15.0</factor>
+
+  <center>
+   <x-m>3.27000</x-m>
+   <y-m>3.9000</y-m>
+   <z-m>-0.100000</z-m>
+  </center>
+
+  <axis>
+   <x>-0.124264</x>
+   <y>0.989513</y>
+   <z>0.063638</z>
+  </axis>
+
+ </animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Stick</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-10</factor>
+  <center>
+   <x-m>3.14</x-m>
+   <y-m>0.00</y-m>
+   <z-m>-0.22</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Rudder</object-name>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>30.0</factor>
+
+  <center>
+   <x-m>7.950000</x-m>
+   <y-m>0.000000</y-m>
+   <z-m>0.765000</z-m>
+  </center>
+
+  <axis>
+   <x>0.000000</x>
+   <y>0.000000</y>
+   <z>1.000000</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Elevator</object-name>
+  <property>surface-positions/elevator-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>-30.0</dep>
+   </entry>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>20.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>7.805</x-m>
+   <y-m>-0.704</y-m>
+   <z-m>0.276</z-m>
+  </center>
+  <axis>
+   <x>0.000000</x>
+   <y>1.000000</y>
+   <z>0.000000</z>
+   </axis>
+ </animation>
+  
+<!--Contrails-->
+
+<model>
+    <path>Aircraft/F8F_VooDooBear/Models/Effects/contrail.xml</path>
+    <offsets>
+     <x-m> 4.3</x-m>
+     <y-m> -.45</y-m>
+     <z-m> 0</z-m>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/F8F_VooDooBear/Models/Effects/contrail.xml</path>
+    <offsets>
+     <x-m> 4.3</x-m>
+     <y-m> .45</y-m>
+     <z-m> 0</z-m>
+    </offsets>
+  </model>
+
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>wing.L</object-name>
+    <object-name>aileron.L</object-name>
+    <object-name>flap.L</object-name>
+    <object-name>elevator.L</object-name>
+    <object-name>wheeldoor1.L</object-name>
+    <object-name>PortWheel</object-name>
+    <object-name>horstab.L</object-name>
+    <object-name>wing.R</object-name>
+    <object-name>aileron.R</object-name>
+    <object-name>flap.R</object-name>
+    <object-name>elevator.R</object-name>
+    <object-name>wheeldoor1.R</object-name>
+    <object-name>wheeldoor2.R</object-name>
+    <object-name>horstab.R</object-name>
+    <object-name>rudder</object-name>
+    <object-name>canopy</object-name>
+    <object-name>prophub</object-name>
+    <property-base>sim/model/livery/</property-base>
+    <texture-prop>texture</texture-prop>
+		<texture>Liveries/F8F_VooDooBear-1.png</texture>
+  </animation>
+
+</PropertyList>

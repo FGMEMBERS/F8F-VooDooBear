@@ -1,0 +1,153 @@
+  <PropertyList> 
+    <path>gearsw-fw.ac</path>
+<!-- Gear Buttons -->    
+ <animation>
+  <type>translate</type>
+  <object-name>gear.out</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>0.01</ind>
+    <dep>0.008</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>0.008</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>gear.in</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>1.0</ind>
+    <dep>0.0</dep>
+   </entry>
+
+   <entry>
+    <ind>0.99</ind>
+    <dep>0.008</dep>
+   </entry>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.008</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>cover</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>0.1</ind>
+    <dep>90.0</dep>
+   </entry>
+   <entry>
+    <ind>0.9</ind>
+    <dep>90.0</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>0.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.003</x-m>
+   <y-m>0.013</y-m>
+   <z-m>0.025</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>gear.in</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/gear-down</property>
+    <value>0.0</value>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>gear.out</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/gear-down</property>
+    <value>1.0</value>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>flap.in</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/flaps</property>
+    <value>0.0</value>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>flap.to</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/flaps</property>
+    <value>0.2</value>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>flap.out</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/flaps</property>
+    <value>1.0</value>
+    </binding>
+  </action>
+</animation>
+  </PropertyList>

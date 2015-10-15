@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>man18-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.25</red>
+    <green>0.25</green>
+    <blue>0.8</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>/engines/engine/mp-osi</property>
+  <min>0</min>
+  <max></max>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>17</ind>
+    <dep>14</dep>
+   </entry>
+   
+   <entry>
+    <ind>52</ind>
+    <dep>346</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

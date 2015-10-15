@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+  <PropertyList> 
+    <path>gear-ger.ac</path>
+    
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.25</red>
+    <green>0.25</green>
+    <blue>0.8</blue>
+  </emission>
+ </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>red</object-name>
+    <condition>
+     <less-than>
+      <property>/gear/gear[1]/position-norm</property>
+      <value>0.2</value>
+     </less-than>
+    </condition>
+   </animation>
+   <animation>
+    <type>select</type>
+    <object-name>green</object-name>
+    <condition>
+     <greater-than>
+      <property>/gear/gear[1]/position-norm</property>
+      <value>0.9</value>
+     </greater-than>
+    </condition>
+   </animation>
+   
+    
+	<!-- *** LoD for the whole model *** -->
+    <animation> 
+      <type>range</type>
+      <min-m>0</min-m>
+      <max-m>5</max-m>
+    </animation>
+  </PropertyList>

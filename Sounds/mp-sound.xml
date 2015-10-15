@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+
+ <fx>
+
+
+  <engine>
+   <name>engstart</name>
+   <path>Aircraft/F8F_VooDooBear/Sounds/bramo-starter.wav</path>
+   <property>engines/engine/cranking</property>
+   <position>
+    <x>-1.5</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <offset>-0.4</offset>
+   </volume>
+  </engine>
+
+<engine>
+   <name>engstart2</name>
+   <path>Aircraft/F8F_VooDooBear/Sounds/starter2.wav</path>
+   <property>engines/engine/cranking</property>
+   <position>
+    <x>-1.5</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <offset>-0.4</offset>
+   </volume>
+  </engine>
+
+  <engine>
+   <name>engine-low-rpm</name>
+   <mode>looped</mode>
+   <path>Aircraft/F8F_VooDooBear/Sounds/hc1a.wav</path>
+   <condition>
+    <property>engines/engine[0]/running</property>
+    <less-than>
+      <property>engines/engine[0]/rpm</property>
+      <value>2600</value>
+    </less-than>
+   </condition>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>-0.0005</factor>
+    <min>0.2</min>
+    <max>1.0</max>
+    <offset>1.0</offset>
+   </volume>
+   <pitch>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.0001</factor>
+    <min>0</min>
+    <max>1.0</max>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>engine-high-rpm</name>
+   <mode>looped</mode>
+   <path>Aircraft/F8F_VooDooBear/Sounds/radial.wav</path>
+   <condition>
+    <property>engines/engine[0]/running</property>
+    <greater-than>
+      <property>engines/engine[0]/rpm</property>
+      <value>50</value>
+    </greater-than>
+   </condition>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.0005</factor>
+    <min>0.5</min>
+    <max>1.5</max>
+    <offset>0.0</offset>
+   </volume>
+   <pitch>
+    <property>engines/engine[0]/mp-osi</property>
+    <type>sqrt</type>
+    <factor>0.41</factor>
+    <offset>0.0</offset>
+   </pitch>
+  </engine>
+
+<engine>
+   <name>engine-high-rpm2</name>
+   <mode>looped</mode>
+   <path>Aircraft/F8F_VooDooBear/Sounds/rpm1.wav</path>
+   <condition>
+    <property>engines/engine[0]/running</property>
+    <greater-than>
+      <property>engines/engine[0]/rpm</property>
+      <value>50</value>
+    </greater-than>
+   </condition>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.0005</factor>
+    <min>0.1</min>
+    <max>.2</max>
+    <offset>0.0</offset>
+   </volume>
+   <pitch>
+    <property>engines/engine[0]/mp-osi</property>
+    <type>sqrt</type>
+    <factor>0.42</factor>
+    <offset>0.01</offset>
+   </pitch>
+  </engine>
+ 
+  <shutdown>
+   <name>shutdown</name>
+   <path>Aircraft/F8F_VooDooBear/Sounds/CentSdown_3.wav</path>
+   <condition>
+    <equals>
+      <property>controls/engines/engine[0]/magnetos</property>
+      <value>0</value>
+    </equals>
+    <greater-than>
+      <property>engines/engine/rpm</property>
+      <value>10</value>
+    </greater-than>
+    <volume>
+    <property>engines/engine/rpm</property>
+    <factor>-0.0005</factor>
+    <min>0.1</min>
+    <max>.5</max>
+    <offset>1.0</offset>
+   </volume>
+   </condition>
+  </shutdown>
+
+  <shutdown>
+   <name>shutdown2</name>
+   <path>Aircraft/F8F_VooDooBear/Sounds/merlin_shutdown.wav</path>
+   <condition>
+    <equals>
+      <property>controls/engines/engine[0]/magnetos</property>
+      <value>0</value>
+    </equals>
+    <greater-than>
+      <property>engines/engine/rpm</property>
+      <value>10</value>
+    </greater-than>
+    <volume>
+    <property>engines/engine/rpm</property>
+    <factor>-0.0005</factor>
+    <min>0.2</min>
+    <max>1</max>
+    <offset>1.0</offset>
+   </volume>
+   </condition>
+ </shutdown>
+ 
+  
+
+   <guns>
+   <name>gunfire</name>
+   <mode>looped</mode>
+   <condition>
+    <property>controls/armament/trigger</property>
+   </condition>
+   <path>Aircraft/F8F_VooDooBear/Sounds/20mm-gun.wav</path>
+  </guns>
+
+<guns>
+   <name>gunfire2</name>
+   <mode>looped</mode>
+   <condition>
+    <property>controls/armament/trigger</property>
+   </condition>
+   <path>Aircraft/F8F_VooDooBear/Sounds/20mm-gun.wav</path>
+  </guns>
+
+ </fx>
+ 
+</PropertyList>

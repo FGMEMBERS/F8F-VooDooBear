@@ -1,0 +1,506 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+F8F_VooDooBear simulation config.
+
+VooDoo's Rare Bear Reno Racer Tribute
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>F8F_VooDooBear</description>
+  <author>VooDoo</author>
+  <status>Voodoo 1.1</status>
+<!--
+  <startup>
+    <splash-texture>Aircraft/bf109/bf109-splash.rgb</splash-texture>
+  </startup>
+-->  
+   <sound>
+   <audible>true</audible>
+   <path>Aircraft/F8F_VooDooBear/Sounds/F8F_VooDooBear-sound.xml</path>
+   <volume type="double">0.26</volume>
+   <flap-volume>0.2</flap-volume>
+   <gear-volume>0.9</gear-volume>
+   <canopy-volume>1.0</canopy-volume>
+  </sound>
+   
+  <flight-model>yasim</flight-model>
+  <aero>F8F_VooDooBear-yasim</aero>
+	
+	<failure>
+		<emptyweight type ="float">7380</emptyweight>
+		<max-permiss-rpm type="float">2800</max-permiss-rpm>
+		<max-permiss-boost type="float">55</max-permiss-boost>
+		<bendload type="float">8</bendload>
+		<breakload type="float">9</breakload>
+		<breakspeed type="float">465</breakspeed>
+		<controls>
+				<left-wing-failure type ="float">0</left-wing-failure>
+				<right-wing-failure type ="float">0</right-wing-failure>
+		</controls>
+		<engines>
+				<engine n="0">
+						<boost-strain type="float">0</boost-strain>
+						<rev-strain type="float">0</rev-strain>
+						<overboost type="bool">false</overboost>
+						<overrev type="bool">false</overrev>
+				</engine>
+		</engines>
+		<gear>
+				<gear n="0">
+				
+				</gear>
+		</gear>
+		<structural>
+				<left-wing-torn type="bool">false</left-wing-torn>
+				<right-wing-torn type="bool">false</right-wing-torn>
+		</structural>
+	</failure>
+  <systems>
+   <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+  <autopilot>
+        <path>Aircraft/F8F_VooDooBear/autopilot.xml</path>
+  </autopilot>
+  </systems> 
+ 
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/F8F_VooDooBear/F8F_VooDooBear-sound.xml</path>
+  </sound>
+  
+
+  <panel>
+  <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+  <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/F8F_VooDooBear/Models/F8F_VooDooBear.xml</path>
+  </model> 
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">1.12</y-offset-m>
+    <z-offset-m archive="y" type="double">3.9</z-offset-m>
+    <pitch-offset-deg>-7.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+ 
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>  
+
+    <help>
+
+    <key>
+      <name>C</name>
+      <desc>toggle Canopy</desc>
+    </key>
+   <key>
+      <name>N</name>
+      <desc>Propeller Coarse</desc>
+    </key>
+   <key>
+      <name>n</name>
+      <desc>Propeller Fine</desc>
+    </key>
+   <key>
+      <name>l</name>
+      <desc>Livery Select</desc>
+    </key>
+   <key>
+      <name>ctrl-d</name>
+      <desc>Drop (external) Tank</desc>
+    </key>
+   <key>
+      <name>m/M</name>
+      <desc>Toggle Master Arm on/off</desc>
+    </key>
+   <key>
+      <name>e</name>
+      <desc>Fire MG</desc>
+    </key>
+   <key>
+      <name>E</name>
+      <desc>Fire Engine Cannon</desc>
+    </key>
+   <key>
+      <name>ctrl-e</name>
+      <desc>Drop Bomb</desc>
+    </key>
+   <key>
+      <name>H</name>
+      <desc>Fire WGR 21</desc>
+    </key>
+    <text>Some notes on the propeller adjust mechanism:
+
+This is no constant speed unit!
+
+Propeller pitch advance is gouverned by a running line dependent on the engine rpm/manifold pressure relation. Ctrl+p toggles this on and off. If the throttle is advanced past 0.7 it will engage automatically.
+
+The actual amount of propeller pitch is displayed on the clock shaped Instrument on the right side of the lower panel. The range counts counter clockwise starting at 12.30 (full fine) to 8.30 (full course).
+
+A note on the tailwheel lock:
+
+The tailwheel locks automatically once the stick is brought backwards. It can be released by moving the stick forward again.
+
+---Take Off---
+Flaps down 10 degrees, Take off at 1.3 ata Manifold Pressure. Lift Tailwheel as soon as possible. Be prepared to use Aileron against Torque and Rudder to counteract Swing. Lift Off at 200-210 km/h.
+Climb with 1.4 ata (Max Continous Power) 1.6 ata is limited to 30 min.
+
+---Landing---
+lower Flaps and Gear under 300 km/h. Approach Speed is 210 km/h. Speed at Treshold should be 190 km/h. Flare to Threepoint attitude before touchdown. After Touchdown use Rudder to keep the Aircraft straight. Remember to slow down sufficiently before moving the stick forward to unlock the tailwheel.</text>
+  </help>
+
+
+  <weight n="0">
+      <name>Fuselage</name>
+      <tank>1</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>86</gals>
+      </opt>
+      <opt><name>SC250 Bomb</name>
+      <lbs>552.0</lbs>
+      </opt>
+  </weight>
+
+  <weight n="1">
+      <name>left Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>MG 151 Machine gun</name>
+      <lbs>110.0</lbs>
+      </opt>
+      <opt><name>WGr 21 Rocket</name>
+      <lbs>270.0</lbs>
+      </opt>
+  </weight>
+
+  <weight n="2">
+      <name>right Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>MG 151 Machine gun</name>
+      <lbs>110.0</lbs>
+      </opt>
+      <opt><name>WGr 21 Rocket</name>
+      <lbs>270.0</lbs>
+      </opt>
+  </weight>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>F8F VooDoo Bear</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>F8F_VooDooBear.magicstart();</script>
+						</binding>
+					</item>
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+
+			</menu>
+		</default>
+	</menubar>
+ </sim>
+
+ <engines>
+  <engine>
+   <mp-osi>3.0</mp-osi>
+   <coolant-temp-degc type="float">15.0</coolant-temp-degc>
+   <oiltempc type = "float">15.0</oiltempc>
+   <oil-visc type = "float">0.1</oil-visc>
+	 <oil-press type = "float">0.0</oil-press>
+	 <fuel-press type ="float">0.0</fuel-press>
+   <rev-strain type="int">0</rev-strain>
+   <overrev type="int">0</overrev>
+   <overheat type="int">0</overheat>
+   <rpm type="float">0.0</rpm>
+  </engine>
+ </engines>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>Internal</name>
+   </tank>
+   <tank n="1">
+    <name>Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim -->
+ <controls>
+  <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+   <armament>
+     <trigger type="bool">false</trigger>
+     <trigger1 type="bool">false</trigger1>
+     <trigger2 type="bool">false</trigger2>
+     <wgr type="bool">false</wgr>
+     <station>
+       <release-tank type="bool">false</release-tank>
+       <release-all type="bool">false</release-all>
+     </station>
+   </armament>
+   <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+        <boost type="double">0.5</boost>
+        <prop-auto type="bool">false</prop-auto>
+        <primer type="double">0.0</primer>
+        <primer-pressed type="bool">0.0</primer-pressed>
+        <radlever type="double">0.0</radlever>
+        <cowl-flaps-norm type="float">0.0</cowl-flaps-norm>
+        <coolflap-auto type ="int">0</coolflap-auto>
+				<on-startup-running type="bool">true</on-startup-running>
+      </engine>
+   </engines>
+   <gear>
+      <tailwheel-lock>true</tailwheel-lock>
+      <bellybrake type="float">1.0</bellybrake>
+   </gear>
+
+   <armament>
+      <trigger type="bool">false</trigger>
+   </armament>
+
+
+   <fuel>
+     <switch-position type = "int">0</switch-position>
+     <tank n="0">
+       <fuel_selector>true</fuel_selector>
+     </tank>
+     <tank n="1">
+       <fuel_selector>true</fuel_selector>
+     </tank>  
+   </fuel>
+
+
+ </controls>
+ <!-- Map Keys -->
+ <input>
+    <keyboard>
+      <key n="16"> 
+          <name>Ctrl-P</name>
+          <desc>Toggle automatic Propeller adjustment.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>/controls/engines/engine[0]/prop-auto</property>
+          </binding>
+      </key>
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Canopy</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>F8F_VooDooBear.toggle_canopy()</script>
+        </binding>
+      </key>
+<!--
+      <key n="68">
+        <name>D</name>
+        <desc>Toggle Canopy</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>bf109.toggle_revi()</script>
+        </binding>
+      </key>
+-->
+      <key n="4">
+        <name>Ctrl-d</name>
+        <desc>drop Tank</desc>
+        <binding>
+          <command>nasal</command>
+          <script>F8F_VooDooBear.drop_tank()</script>
+        </binding>
+      </key>  
+      <key n="100"> 
+        <name>d</name>
+        <desc>Toggle Master Arm on</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="68"> 
+        <name>D</name>
+        <desc>Toggle Master Arm off</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire MG</desc>
+        <binding>
+          <command>nasal</command>
+          <script>F8F_VooDooBear.fire_MG()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>F8F_VooDooBear.stop_MG()</script>
+          </binding>
+        </mod-up>
+      </key>
+
+      <key n="69">
+        <name>E</name>
+        <desc>fire engine Cannon</desc>
+        <binding>
+          <command>nasal</command>
+          <script>F8F_VooDooBear.fire_cannon()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>F8F_VooDooBear.stop_cannon()</script>
+          </binding>
+        </mod-up>
+      </key>
+
+      <key n="5">
+        <name>Ctrl-e</name>
+        <desc>drop Center Load</desc>
+        <binding>
+          <command>nasal</command>
+          <script>F8F_VooDooBear.drop_bomb()</script>
+        </binding>
+      </key>  
+      <key n="102">
+        <name>f</name>
+        <desc>fuel tank select</desc>
+        <binding>
+        <command>nasal</command>
+        <script>F8F_VooDooBear.fuel_switch()</script>
+  </binding>
+  </key> 
+
+      <key n="72">
+        <name>H</name>
+        <desc>Fire WGr 21</desc>
+          <binding n="0">
+          <command>nasal</command>
+          <script>F8F_VooDooBear.fire_wgr()</script>
+        </binding>
+      </key>
+     <key n="115">
+      <name>s</name>
+      <binding>
+        <command>nasal</command>
+        <script>F8F_VooDooBear.starter(1)</script>
+      </binding>
+      <mod-up>
+       <binding>
+         <command>nasal</command>
+         <script>F8F_VooDooBear.starter(0)</script>
+       </binding>
+      </mod-up>
+ </key> 
+      <!-- Livery Box -->
+         <key n="108">
+            <name>l</name>
+            <desc>Show livery select dialog</desc>
+              <binding>
+                <command>nasal</command>
+                <script>livery.showModelSelectDialog()</script>
+              </binding>
+         </key>
+     </keyboard>
+ </input>
+
+<!-- Nasal files/scripts -->
+  <nasal>
+
+    <F8F_VooDooBear>
+      <file>Aircraft/F8F_VooDooBear/Nasal/F8F_VooDooBear.nas</file>
+      <script>init();</script>
+      <file>Aircraft/F8F_VooDooBear/Nasal/liveries.nas</file>
+    </F8F_VooDooBear>
+		<failure>
+			<file>Aircraft/F8F_VooDooBear/Nasal/failure.nas</file>
+		</failure>
+  </nasal>
+
+
+</PropertyList>
+
+
+
+

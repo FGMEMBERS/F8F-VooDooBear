@@ -1,0 +1,112 @@
+<PropertyList>
+<!--
+ <path>cockpit.ac</path>
+-->
+ <animation>
+  <type>material</type>
+  <object-name>mainpanel</object-name>
+  <object-name>auxpanel</object-name>
+  <object-name>upperpanel</object-name>
+  <emission>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    <red>0.05</red>
+    <green>0.05</green>
+    <blue>0.1</blue>
+  </emission>
+ </animation>
+
+<!-- Main Instrument Panel -->
+ <model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-alt.xml</path>
+  <offsets>
+   <x-m>3.139</x-m>
+   <y-m>-0.180</y-m>
+   <z-m>0.643</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-asi.xml</path>
+  <offsets>
+   <x-m>3.139</x-m>
+   <y-m>-0.180</y-m>
+   <z-m>0.770</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-attitude.xml</path>
+  <offsets>
+   <x-m>3.139</x-m>
+   <y-m>0.012</y-m>
+   <z-m>0.777</z-m>
+  </offsets>
+ </model> 
+
+ 
+ <model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-remote.xml</path>
+  <offsets>
+   <x-m>3.208</x-m>
+   <y-m>0.096</y-m>
+   <z-m>0.573</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-man.xml</path>
+  <offsets>
+   <x-m>3.208</x-m>
+   <y-m>0.18</y-m>
+   <z-m>0.57</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-tach.xml</path>
+  <offsets>
+   <x-m>3.208</x-m>
+   <y-m>0.219</y-m>
+   <z-m>0.492</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-turn.xml</path>
+  <offsets>
+   <x-m>3.19</x-m>
+   <y-m>0.114</y-m>
+   <z-m>0.667</z-m>
+  </offsets>
+ </model>
+ 
+  
+<model>
+  <path>Aircraft/F8F_VooDooBear/Models/Instruments/P-39D-vsi.xml</path>
+  <offsets>
+   <x-m>3.363</x-m>
+   <y-m>0.319</y-m>
+   <z-m>0.193</z-m>
+	 <pitch-deg>-90</pitch-deg>
+	 <roll-deg>21</roll-deg>
+  </offsets>
+ </model>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Stick</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-10</factor>
+  <center>
+   <x-m>3.14</x-m>
+   <y-m>0.00</y-m>
+   <z-m>-0.22</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
